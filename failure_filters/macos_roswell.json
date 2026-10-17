@@ -186,6 +186,450 @@
         }
       ]
     },
+    "TestNxdkLowLevelCPUTests__TestfloatTestXiso": {
+      "TestFloat F32": [
+        {
+          "level": "fail",
+          "message": "f32_add (near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_add (minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_add (min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_add (max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_sub (near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_sub (minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_sub (min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_sub (max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_mul (near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_mul (minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_mul (min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_mul (max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_div (near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_div (minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_div (min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_div (max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_sqrt (near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_sqrt (minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_sqrt (min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_sqrt (max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_eq: 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_le: 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f32_lt: 20 error(s)"
+        }
+      ],
+      "TestFloat F64": [
+        {
+          "level": "fail",
+          "message": "f64_add (near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_add (minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_add (min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_add (max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_sub (near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_sub (minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_sub (min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_sub (max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_mul (near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_mul (minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_mul (min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_mul (max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_div (near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_div (minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_div (min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_div (max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_sqrt (near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_sqrt (minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_sqrt (min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_sqrt (max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_eq: 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_le: 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "f64_lt: 20 error(s)"
+        }
+      ],
+      "TestFloat ExtF80": [
+        {
+          "level": "fail",
+          "message": "extF80_add (prec 32, near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_add (prec 32, minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_add (prec 32, min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_add (prec 32, max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_add (prec 64, near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_add (prec 64, minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_add (prec 64, min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_add (prec 64, max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_add (prec 80, near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_add (prec 80, minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_add (prec 80, min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_add (prec 80, max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sub (prec 32, near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sub (prec 32, minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sub (prec 32, min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sub (prec 32, max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sub (prec 64, near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sub (prec 64, minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sub (prec 64, min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sub (prec 64, max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sub (prec 80, near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sub (prec 80, minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sub (prec 80, min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sub (prec 80, max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_mul (prec 32, near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_mul (prec 32, minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_mul (prec 32, min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_mul (prec 32, max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_mul (prec 64, near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_mul (prec 64, minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_mul (prec 64, min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_mul (prec 64, max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_mul (prec 80, near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_mul (prec 80, minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_mul (prec 80, min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_mul (prec 80, max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_div (prec 32, near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_div (prec 32, minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_div (prec 32, min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_div (prec 32, max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_div (prec 64, near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_div (prec 64, minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_div (prec 64, min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_div (prec 64, max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_div (prec 80, near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_div (prec 80, minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_div (prec 80, min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_div (prec 80, max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sqrt (prec 32, near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sqrt (prec 32, minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sqrt (prec 32, min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sqrt (prec 32, max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sqrt (prec 64, near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sqrt (prec 64, minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sqrt (prec 64, min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sqrt (prec 64, max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sqrt (prec 80, near_even): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sqrt (prec 80, minMag): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sqrt (prec 80, min): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_sqrt (prec 80, max): 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_eq: 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_le: 20 error(s)"
+        },
+        {
+          "level": "fail",
+          "message": "extF80_lt: 20 error(s)"
+        }
+      ]
+    },
     "TestNxdkLowLevelNV2ATests__M2mfTestXiso": {
       "M2MF Causal Chained Transfers": [
         {
