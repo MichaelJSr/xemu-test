@@ -63,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: ${{ inputs.xemu_test_repository || github.repository }}
           ref: ${{ inputs.xemu_test_ref || '' }}
@@ -137,7 +137,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - name: Checkout Code
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: ${{ inputs.xemu_test_repository || github.repository }}
           ref: ${{ inputs.xemu_test_ref || '' }}
@@ -262,9 +262,17 @@ jobs:
           sudo mkdir -p /cores
           sudo chmod 1777 /cores
 
-      - name: Setup ffmpeg
+      # Linux takes Ubuntu's ffmpeg: when setup-ffmpeg's download fails
+      # ("TypeError: fetch failed"), the whole Linux leg fails with it.
+      - name: Setup ffmpeg (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update -qy
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Setup ffmpeg (Windows)
         id: setup-ffmpeg
-        if: runner.os == 'Linux' || (runner.os == 'Windows' && inputs.install_windows_ffmpeg == true)
+        if: runner.os == 'Windows' && inputs.install_windows_ffmpeg == true
         uses: FedericoCarboni/setup-ffmpeg@v3.1
 
       - name: Setup Linux Display & Dependencies
@@ -283,7 +291,7 @@ jobs:
           path: ${{ github.workspace }}/assets
 
       - name: Setup venv & Install xemutest
-        uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
+        uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
         with:
           activate-environment: true
           python-version: "3.12"
@@ -305,7 +313,7 @@ jobs:
               python -m xemutest \
                   --no-mcpx \
                   --sysram 128 \
-                  --ffmpeg "${{ steps.setup-ffmpeg.outputs.ffmpeg-path }}/ffmpeg" \
+                  --ffmpeg /usr/bin/ffmpeg \
                   --ci-summary-omit-innermost-passed-subtests \
                   -v \
                   --no-hard-fpu \
