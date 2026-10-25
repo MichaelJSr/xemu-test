@@ -128,13 +128,20 @@ jobs:
           retention-days: 1
 
   test-roswell:
-    name: Test (${{ matrix.os }})
+    name: Test (${{ matrix.os }}${{ matrix.variant != 'default' && format(' {0}', matrix.variant) || '' }})
     needs: prepare-data
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
+        variant: [default]
+        # Windows on the host x87 too (tcg/i386 x87_* ops): the other x86_64
+        # legs run --no-hard-fpu. A new combination, not a merge into the
+        # soft leg, since its variant differs.
+        include:
+          - os: windows-latest
+            variant: hard-fpu
     steps:
       - name: Checkout Code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -326,14 +333,14 @@ jobs:
         if: runner.os == 'Windows'
         run: |
           New-Item -ItemType Directory -Force -Path results
-          $args = @(
-              "-m", "xemutest",
-              "--no-mcpx",
-              "--sysram", "128",
-              "--no-hard-fpu",
-              "--failure-filter", "failure_filters/windows_roswell_softfpu.json",
-              "--ci-summary-omit-innermost-passed-subtests"
-          )
+          $args = @("-m", "xemutest", "--no-mcpx", "--sysram", "128")
+          if ("${{ matrix.variant }}" -eq "hard-fpu") {
+              $args += @("--failure-filter", "failure_filters/windows_roswell_hardfpu.json")
+          } else {
+              $args += @("--no-hard-fpu",
+                         "--failure-filter", "failure_filters/windows_roswell_softfpu.json")
+          }
+          $args += "--ci-summary-omit-innermost-passed-subtests"
           $ffmpegPath = "${{ steps.setup-ffmpeg.outputs.ffmpeg-path }}"
           if ($ffmpegPath) {
               $args += @("--ffmpeg", "$ffmpegPath/ffmpeg.exe")
@@ -401,7 +408,7 @@ jobs:
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         if: always()
         with:
-          name: crash-dumps-${{ matrix.os }}
+          name: crash-dumps-${{ matrix.os }}-${{ matrix.variant }}
           path: crash_dumps
           if-no-files-found: ignore
           retention-days: 5
@@ -410,5 +417,5 @@ jobs:
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         if: '!cancelled()'
         with:
-          name: results-${{ matrix.os }}
+          name: results-${{ matrix.os }}-${{ matrix.variant }}
           path: results
